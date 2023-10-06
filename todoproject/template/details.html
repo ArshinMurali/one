@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends 'base.html' %}
+{% block body %}
+
+
+                <h4>Completed Tasks</h4>
+
+                <div class="shadow card" style="width: 34rem;">
+    <!--            <img class="card-img-top" src="..." alt="Card image cap">-->
+                <div class="card-body">
+                <div class=" card-header">
+                   {% for detail in results %}
+                <h4 class="card-title"><b>{{detail.a}}</b></h4>
+                <p class="card-text"><b>{{detail.b}}</b></p>
+                <p class="card-text"><b>{{detail.c}}</b></p>
+                <a href="{% url 'delete' detail.id %}" class="btn btn-warning">Delete</a>
+                <a href="{% url 'update' detail.id %}" class="btn btn-primary">Edit</a>
+                    {% endfor %}
+                </div>
+                </div>
+                </div>
+        </div>
+                </div>
+                </div><br>
+{% endblock %}
+
+</body>
+</html>
